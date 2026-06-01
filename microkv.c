@@ -100,9 +100,12 @@ unsigned int hash(const char *s) {
 
 /* Core Data Manipulation Functions */
 
-// Add a new node to the hash_table. If a node with a specific key already
-// exists, it will be replaced using the new value to prevent memory leaks.
-// Only one value for a key is allowed.
+/**
+ * [Algorithm: Add Key-Value Pair]
+ * This function inserts a new key-value pair into the hash table. If a node with
+ * the specified key already exists, it will be replaced with the new value to
+ * prevent memory leaks. Only one value for a key is allowed.
+ */
 void add_key_value(const char *key, const char *value) {
   unsigned int idx = hash(key) % HASH_SIZE;
   KVNode *current = hash_table[idx];
@@ -128,8 +131,11 @@ void add_key_value(const char *key, const char *value) {
   hash_table[idx] = new_node;
 }
 
-// Returns the value stored at the searched key.
-// If the key is not found, returns NULL.
+/**
+ * [Algorithm: Retrieve Value by Key]
+ * This function searches for a node with the specified key in the hash table.
+ * If found, it returns a pointer to the value; otherwise, it returns NULL.
+ */
 const char *get_value(const char *key) {
   unsigned int idx = hash(key) % HASH_SIZE;
   KVNode *current = hash_table[idx];
@@ -143,7 +149,10 @@ const char *get_value(const char *key) {
   return NULL;
 }
 
-// This function deletes the node containing the key and all the content.
+/**
+ * [Algorithm: Delete Key-Value Pair]
+ * This function removes the node containing the specified key and all associated content.
+ */
 void delete_key_value(const char *key) {
   unsigned int idx = hash(key) % HASH_SIZE;
   KVNode *current = hash_table[idx];
