@@ -1,3 +1,5 @@
 .microkv_history
 *.o
 microkv
+database.aof
+

@@ -11,7 +11,7 @@
 # ==============================================================================
 
 CC      = gcc
-CFLAGS  = -std=c99 -Wall -Wextra -D_DEFAULT_SOURCE -O2 -g
+CFLAGS  = -std=c17 -Wall -Wextra -D_DEFAULT_SOURCE -O2 -g
 TARGET  = microkv
 SRC     = microkv.c linenoise.c
 OBJ     = $(SRC:.c=.o)
