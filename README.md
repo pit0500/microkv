@@ -49,8 +49,10 @@ Build the architecture by triggering the optimized compilation pipeline defined 
 
 ```bash
 make
+```
 
 To automatically sweep temporary artifacts, clear the active log, and spin up a fresh REPL session in a single transaction:
+```bash
 make run
 
 Usage Example
@@ -67,9 +69,10 @@ microkv> get session_id
 microkv> quit
 Graceful shutdown initiated. Freeing allocated nodes...
 $
+```
 
 ## Project Structure
-• microkv.c — Core transactional logic, memory allocation loops, AOF parser, and the REPL pipeline.
-• linenoise.c / linenoise.h — Minimalist terminal raw mode controller and inline input processor.
-• Makefile — Build automation engine utilizing production-level diagnostic flags (-Wall -Wextra -O2 -g).
+* microkv.c — Core transactional logic, memory allocation loops, AOF parser, and the REPL pipeline.
+* linenoise.c / linenoise.h — Minimalist terminal raw mode controller and inline input processor.
+* Makefile — Build automation engine utilizing production-level diagnostic flags (-Wall -Wextra -O2 -g).
 
