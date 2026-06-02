@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "linenoise.h"
+#include "deps/linenoise/linenoise.h"
 
 #define HASH_SIZE 4096
 
